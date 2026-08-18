@@ -13,8 +13,8 @@ Five different classifiers (Logistic Regression, Decision Tree, k-Nearest Neighb
 ## b. Dataset Description
 
 - **Dataset**: Heart Disease Classification Dataset (UCI Repository standard)
-- **Total Records**: 1,025 instances (satisfies the minimum requirement of 500 instances)
-- **Total Features**: 13 input features + 1 binary target (satisfies the minimum requirement of 12 features)
+- **Total Records**: 1,025 instances
+- **Total Features**: 13 input features + 1 binary target
 
 ### Attribute Information:
 1. `age`: Age in years (range: 29 - 77)
