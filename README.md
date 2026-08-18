@@ -1,9 +1,5 @@
 # Machine Learning - Assignment 2
-
-**Course**: Machine Learning (M.Tech AIML/DSE)  
-**Student ID**: 2025AC05718  
-**Submission Deadline**: 18-Aug-2026  
-
+**Student ID**: 2025AC05718 
 ---
 
 ## a. Problem Statement
