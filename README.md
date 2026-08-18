@@ -1,5 +1,5 @@
-# Machine Learning - Assignment 2
-**Student ID**: 2025AC05718 
+# Machine Learning - Assignment 2 
+**Student ID**: 2025AC05718  
 ---
 
 ## a. Problem Statement
@@ -75,10 +75,11 @@ The models were evaluated on an 80-20 stratified train-test split (205 test inst
 ├── app.py                     # Streamlit application
 ├── requirements.txt           # Deployment dependencies
 ├── README.md                  # Assignment documentation
-├── test_data.csv              # Hold-out test dataset
-├── heart_disease_dataset.csv  # Full dataset (1025 samples)
-├── train_model.py             # Model training script
-└── model/                     # Serialized model files
+├── test_data.csv              # Hold-out test dataset (205 rows derived from full data set)
+├── heart_disease_dataset.csv  # Full dataset (1025 samples of which 820 rows are training set and 205 rows are test set)
+└── model/                     # Saved models and training scripts
+    ├── train_model.py         # Model training script
+    ├── models_training.ipynb  # Interactive model training notebook
     ├── logistic_regression.pkl
     ├── decision_tree.pkl
     ├── knn.pkl
@@ -96,10 +97,15 @@ The models were evaluated on an 80-20 stratified train-test split (205 test inst
    ```bash
    pip install -r requirements.txt
    ```
-2. Train models (optional):
-   ```bash
-   python train_model.py
-   ```
+2. Train models and generate artifacts (pre-trained models already included):
+   - **Via Python Script**:
+     ```bash
+     python model/train_model.py
+     ```
+   **OR**
+
+   - **Via Jupyter Notebook**:
+     Open and run `model/models_training.ipynb` in Jupyter Notebook.
 3. Launch Streamlit web app:
    ```bash
    python -m streamlit run app.py

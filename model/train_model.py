@@ -113,9 +113,16 @@ def train_and_evaluate_models(X_train, X_test, y_train, y_test, X_train_scaled, 
 
 
 if __name__ == '__main__':
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(script_dir, 'heart_disease_dataset.csv')
-    model_save_dir = os.path.join(script_dir, 'model')
+    # Determine base and model directories whether run from root or model/
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    if os.path.basename(current_dir) == 'model':
+        model_save_dir = current_dir
+        root_dir = os.path.dirname(current_dir)
+    else:
+        model_save_dir = os.path.join(current_dir, 'model')
+        root_dir = current_dir
+        
+    data_path = os.path.join(root_dir, 'heart_disease_dataset.csv')
     
     print("Loading data and training models...")
     X_tr, X_te, y_tr, y_te, X_tr_sc, X_te_sc, scl = load_and_preprocess_data(data_path)
@@ -123,7 +130,7 @@ if __name__ == '__main__':
     # Export test split for evaluation and streamlit upload demo
     test_export = X_te.copy()
     test_export['target'] = y_te
-    test_export.to_csv(os.path.join(script_dir, 'test_data.csv'), index=False)
+    test_export.to_csv(os.path.join(root_dir, 'test_data.csv'), index=False)
     print("Saved test_data.csv ({} instances)".format(len(test_export)))
     
     results = train_and_evaluate_models(
